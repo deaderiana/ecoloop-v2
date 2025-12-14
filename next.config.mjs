@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
+    // Biarkan Vercel tetap deploy meski ada warning ESLint
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
+    // Biarkan Vercel tetap deploy meski ada error TypeScript kecil
     ignoreBuildErrors: true,
   },
 };
