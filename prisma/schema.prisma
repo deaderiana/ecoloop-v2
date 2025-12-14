@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Listing {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  quantity    Int
+  price       Int
+  category    String
+  // FITUR BARU: Kolom Status (Defaultnya "Tersedia")
+  status      String   @default("Tersedia") 
+  createdAt   DateTime @default(now())
+}
